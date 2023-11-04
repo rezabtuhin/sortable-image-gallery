@@ -8,6 +8,7 @@ export function Grid({children}) {
     console.log("Button clicked")
   }
   return (
+    // parent layout of image gallery
     <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 lg:gap-5 md:gap-5 sm:gap-3 gap-3">
       {children}
       <div className="button-div" onClick={uploadImage}/>

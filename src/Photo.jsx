@@ -15,5 +15,6 @@ export const Photo = forwardRef(({url, index, faded, style, ...props}, ref) => {
   };
 
   // eslint-disable-next-line react/prop-types
+  // since the mechanism is to set the images as background image of the divs, thus it utilizes the self-closing div as image holder it has some props and inline styling. also toggling the hover effect to be effective if the image is not checked. the prop is coming from SortablePhoto.jsx
   return <div ref={ref} style={inlineStyles} {...props} className={`image-holder ${props.checked ? "" : "hover-effect"}`}/>;
 });

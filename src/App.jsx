@@ -51,10 +51,12 @@ const App = () => {
           {textToShow}
         </h1>
         <button className={`text-red-600 ${show} delete-btn hover:underline`} onClick={deleteImage}>
-          Delete files
+          Delete {deleteItems.length > 1 ? "files" : "file"}
         </button>
       </div>
       <div className="lg:p-5 md:p-5 sm:p-3 p-3">
+
+        {/*place where the drag and drop will work*/}
         <DndContext
             sensors={sensors}
             collisionDetection={closestCenter}
@@ -62,7 +64,9 @@ const App = () => {
             onDragEnd={handleDragEnd}
             onDragCancel={handleDragCancel}
         >
+          {/*image to be sorted*/}
           <SortableContext items={items} strategy={rectSortingStrategy}>
+            {/*displaying images in a grid layout*/}
             <Grid>
               {items.map((url, index) => (
                   <SortablePhoto key={url} url={url} index={index} deleteItem={deleteItems} setDeleteItem={setDeleteItems}/>
@@ -70,6 +74,7 @@ const App = () => {
             </Grid>
           </SortableContext>
 
+          {/*an overlay of current selected image while dragging*/}
           <DragOverlay adjustScale={true}>
             {activeId ? (
                 <Photo url={activeId} index={items.indexOf(activeId)} />
@@ -80,17 +85,22 @@ const App = () => {
     </div>
   );
 
+  // to keep track of image index when dragging starts
   function handleDragStart(event) {
     setActiveId(event.active.id);
   }
 
+  // operations when drag is done
   function handleDragEnd(event) {
     const { active, over } = event;
     if (active.id !== over.id) {
+
+      // changing and updating the index of the image after dragging
       setItems((items) => {
         const oldIndex = items.indexOf(active.id);
         const newIndex = items.indexOf(over.id);
 
+        // changing the `deleted` image index as it changes its index after dragging
         let newDeleteItems = []
         deleteItems.forEach((item) => {
           if (item === oldIndex){
@@ -114,6 +124,7 @@ const App = () => {
     setActiveId(null);
   }
 
+  // resetting the active image id after canceling the dragging
   function handleDragCancel() {
     setActiveId(null);
   }
