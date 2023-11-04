@@ -18,7 +18,7 @@ import {
 import { Grid } from "./Grid";
 import { SortablePhoto } from "./SortablePhoto";
 import { Photo } from "./Photo";
-import photos from "./photos.json";
+import {photos} from "./photos.jsx";
 
 const App = () => {
   const [items, setItems] = useState(photos);
