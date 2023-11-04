@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, {useState} from 'react';
 import {useSortable} from '@dnd-kit/sortable';
 import {CSS} from '@dnd-kit/utilities';
 
@@ -13,6 +13,7 @@ export const SortablePhoto = (props) => {
     setNodeRef,
     transform,
     transition,
+    isDragging
   } = sortable;
 
   const style = {
@@ -32,16 +33,8 @@ export const SortablePhoto = (props) => {
     }
   }
   return (
-    <div
-    style={{
-      // eslint-disable-next-line react/prop-types
-      gridRowStart: props.index === 0 ? 'span 2' : null,
-      // eslint-disable-next-line react/prop-types
-      gridColumnStart: props.index === 0 ? 'span 2' : null,
-    }}
-    className="image-container"
-    >
-      <input type="checkbox" className="overlay-checkbox" onChange={handleCheckedItem}/>
+    <div className={`image-container ${props.index === 0 ? "col-span-2 row-span-2" : ""}`}>
+      <input type="checkbox" className={`${isDragging ? 'hidden' : 'overlay-checkbox'}`} onChange={handleCheckedItem}/>
       <Photo
           ref={setNodeRef}
           style={style}

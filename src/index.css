@@ -45,13 +45,13 @@ code {
 }
 
 
-.image-holder:hover{
+.image-container:hover .image-holder{
     filter: brightness(0.5);
     transition: all 0.2s ease-in-out;
 }
 
 .image-holder{
     border-radius: 10px;
-    border: 1px solid #d0d0d0;
+    border: 1px solid #d8d8d8;
 }
 

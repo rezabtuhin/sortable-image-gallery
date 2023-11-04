@@ -42,19 +42,19 @@ const App = () => {
     setDeleteItems([]);
   };
   return (
-    <div className="m-12 bg-white mx-14">
-      <div className="header p-5 flex items-center justify-between border-b-[1px] border-gray-600">
+    <div className="bg-white lg:m-14 md:m-11 sm:m-8 m-4">
+      <div className="header lg:p-5 md:p-5 sm:p-3 p-3 flex items-center justify-between border-b-[1px] border-[#dddcdf]">
         <h1 className="font-bold">
           {deleteItems.length > 0 && (
             <input type="checkbox" checked onChange={toggleAllCheckboxes} />
           )}
           {textToShow}
         </h1>
-        <button className={`text-red-600 ${show} delete-btn`} onClick={deleteImage}>
+        <button className={`text-red-600 ${show} delete-btn hover:underline`} onClick={deleteImage}>
           Delete files
         </button>
       </div>
-      <div className="p-5">
+      <div className="lg:p-5 md:p-5 sm:p-3 p-3">
         <DndContext
             sensors={sensors}
             collisionDetection={closestCenter}
