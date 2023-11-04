@@ -14,5 +14,6 @@ export const Photo = forwardRef(({url, index, faded, style, ...props}, ref) => {
     ...style,
   };
 
-  return <div ref={ref} style={inlineStyles} {...props} className="image-holder"/>;
+  // eslint-disable-next-line react/prop-types
+  return <div ref={ref} style={inlineStyles} {...props} className={`image-holder ${props.checked ? "" : "hover-effect"}`}/>;
 });
