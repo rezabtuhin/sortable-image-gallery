@@ -69,3 +69,14 @@ code {
     position: absolute;
     border-radius: 10px!important;
 }
+
+.button-div{
+    background: url("./assets/icons/Untitled-1.png");
+    aspect-ratio: 1;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #d8d8d8;
+    border-radius: 10px;
+    border-style: dashed;
+    cursor: pointer;
+}

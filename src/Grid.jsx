@@ -3,10 +3,14 @@ import React from 'react';
 
 // eslint-disable-next-line react/prop-types
 export function Grid({children}) {
-  return (
-    <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-5">
-      {children}
 
+  function uploadImage(){
+    console.log("Button clicked")
+  }
+  return (
+    <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 lg:gap-5 md:gap-5 sm:gap-3 gap-3">
+      {children}
+      <div className="button-div" onClick={uploadImage}/>
     </div>
   );
 }
