@@ -1,8 +1,31 @@
-# React + Vite
+# Sortable Image Gallery
+![Hola](public/hola.gif)
+## Features
+- Drag and Drop Reordering.
+- Selecting Multiple Image.
+- Delete Single/Multiple Image.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technology Used
+- [React with Vite](https://vitejs.dev/).
+- [dnd-kit](https://dndkit.com/).
+- [TailwindCSS](https://tailwindcss.com/)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+> Requires at least `node v18.18.1` and `npm v9.8.1`
+### Clone the Repository
+```sh
+git clone https://github.com/rezabtuhin/sortable-image-gallery.git
+```
+### Navigate to the Project
+```sh
+cd sortable-image-gallery
+```
+### Install Packages
+```sh
+npm install
+```
+### Run Project
+```sh
+npm run dev
+```
